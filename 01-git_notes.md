@@ -9,8 +9,8 @@
 	* [查看命令](#查看命令)
 	* [分支命令](#分支命令)
 * [版本控制](#版本控制)
-	* ["git log命令"](#"git log命令")
-	* ["`git reset --hard HEAD^`"](#"`git reset --hard HEAD^`")
+	* [git log命令](#git log命令)
+	* [git reset --hard HEAD^](#git reset --hard HEAD^)
 	* [工作区和版本库](#工作区和版本库)
 	* [撤销修改](#撤销修改)
 	* [删除文件](#删除文件)
@@ -105,13 +105,13 @@ Initialized empty Git repository in E:/Git/location/Git/git/.git/
 
 # 版本控制
 
-## `git log`命令：
+## git log命令：
 1. `git log`命令查看对文件修改的历次相关信息，命令显示从最近到最远的提交日志。注意这里不是所有版本都列出来，而是根据修改的时间顺序，将当前版本之前的版本都列出来，如果回退了，那就不会显示本版本之后的版本。
 2. 输出的信息中，第一行`commit`后面是一个`SHA1`计算出来的一个非常大的数字，用十六进制表示，用来唯一表示每一次提交的版本。其实，`git`当用户在某个分支下每提交文档的一个新版本到仓库以后，都会在这个分支下，依次把各个版本的文档，按照时间的先后顺序，串成一条时间线，相当于一棵树。
 3. 当前版本会在`commit`一行的末尾用`HEAD`指明。
 4. `git log --pretty=oneline`只输出每份修改信息的第一行，即输出`commit`一行。
 
-## `git reset --hard HEAD^`
+## git reset --hard HEAD^
 
 1. 一个`HEAD^`表示回退一个版本，两个`^`表示回退两个版本，`HEAD^^`，多个版本回退可以直接`HEAD~n`，`n`为一个整数，表示要回退多少个版本。
 2. 撤销回退：其实`HEAD`就像一个指针，执行命令的时候，`--hard`指向哪个`commit id`，它就恢复到哪个版本。所以撤销回退的时候，可以用`git reset --hard id`，这里的`id`就是`git log`命令输出的`commit`行后计算出来的`SHA1`，不需要写完整，只需要达到计算机可辨识的程度，它就会自动寻找，一般写四五位就足够了。
@@ -550,69 +550,22 @@ $ git checkout -b dev origin/dev
 6. 这就是多人协作的工作模式。
 ```
 
+# 远程仓库管理
 
+## 删除远程仓库
 
+在后台删除即可，`settings-->Repository`，下来到最下面，`delete`即可。
 
+## 删除文件或文件夹
 
+GitHub本身并不允许直接删除文件或文件夹，因此需要借助Git工具
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```shell
+# 1. 先指定要删除的文件或文件夹
+$ git rm -r --cached <file_name/directory>
+# 2. 提交上述操作
+$ git commit -m "some explanations"
+# 3. 提交远程指令，将删除远程文件或文件夹
+$ git push -u origin master
+# 注意，这里将只删除远程的文件或文件夹，而本地仓库中的文件或者文件夹不会被删除，也不会被提交上去
+```
