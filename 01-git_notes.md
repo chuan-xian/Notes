@@ -1,6 +1,6 @@
 [TOC]
-# [安装](#安装)
-## [Linux](#Linux)
+* [安装](#安装)
+* [Linux](#Linux)
 
 # 安装
 ## Linux
