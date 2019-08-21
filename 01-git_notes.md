@@ -1,6 +1,6 @@
 目录
 * [安装](#安装)
-** [Linux](#Linux)
+	* [Linux](#Linux)
 
 # 安装
 ## Linux
