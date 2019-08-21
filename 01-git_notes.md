@@ -1,9 +1,9 @@
 [TOC]
-[安装](#安装)
-[Linux](#Linux)
-
 # [安装](#安装)
 ## [Linux](#Linux)
+
+# 安装
+## Linux
 - 先在终端输入 `git` 命令，测试是否自带或已安装；
 - 如果未安装，输入`sudo apt-get install git`
 - 老一点的版本输入：`sudo apt-get install git-core`	//因为原来有个叫git的软件（GNU Interactive Tools），后来改名了，git才有机会使用新命令安装。
