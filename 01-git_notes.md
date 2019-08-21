@@ -10,7 +10,7 @@
 	* [分支命令](#分支命令)
 * [版本控制](#版本控制)
 	* ["git log命令"](#"git log命令")
-	* [`git reset --hard HEAD^`](#`git reset --hard HEAD^`)
+	* ["`git reset --hard HEAD^`"](#"`git reset --hard HEAD^`")
 	* [工作区和版本库](#工作区和版本库)
 	* [撤销修改](#撤销修改)
 	* [删除文件](#删除文件)
